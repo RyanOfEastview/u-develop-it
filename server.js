@@ -202,6 +202,10 @@ app.delete('/api/party/:id', (req, res) => {
   });
 });
 
+db.query(`SELECT * FROM candidates`, (err, rows) => {
+  console.log(rows);
+});
+
 // Not Found response for unmatched routes
 app.use((req, res) => {
   res.status(404).end();
